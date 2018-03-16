@@ -4,14 +4,14 @@ from src.model import Model
 
 flags = tf.flags
 
-flags.DEFINE_string("mode", "test", "启动模式 train/debug/test")
+flags.DEFINE_string("mode", "train", "启动模式 train/debug/test")
 
-train_data_dir = "E:\sentiment\\train\k6\\"
-test_data_dir = "E:\sentiment\\test\k6\\"
+train_data_dir = "E:\sentiment\\train\k10\\"
+test_data_dir = "E:\sentiment\\test\k10\\"
 word2vec_data_dir = "E:\sentiment\data\word2vec_ikaNoDic.txt"
-model_save_dir = "E:\sentiment\model\k6"
-train_log_dir = "E:\sentiment\log\\train\k6"
-test_log_dir = "E:\sentiment\log\\test\k6"
+model_save_dir = "E:\sentiment\model\k14"
+train_log_dir = "E:\sentiment\log\\train\k14"
+test_log_dir = "E:\sentiment\log\\test\k10"
 
 flags.DEFINE_string("train_data_dir", train_data_dir, "训练数据文件目录")
 flags.DEFINE_string("test_data_dir", test_data_dir, "测试数据文件目录")
@@ -20,12 +20,12 @@ flags.DEFINE_string("model_save_dir", model_save_dir, "模型保存路径")
 flags.DEFINE_string("train_log_dir", train_log_dir, "训练日志文件目录")
 flags.DEFINE_string("test_log_dir", test_log_dir, "测试日志文件目录")
 
-flags.DEFINE_integer("train_step", 50000, "训练次数")
+flags.DEFINE_integer("train_step", 1000, "训练次数")
 flags.DEFINE_integer("test_step", 2000, "测试次数")
 flags.DEFINE_integer("accuracy_step", 5, "验证间隔")
 
-flags.DEFINE_integer("scene_num", 14, "情感数量")
-flags.DEFINE_integer("batch_size", 140, "数据分批大小")
+flags.DEFINE_integer("scene_num", 13, "情感数量")
+flags.DEFINE_integer("batch_size", 130, "数据分批大小")
 flags.DEFINE_integer("train_keep_prob", 0.5, "训练时保留概率")
 flags.DEFINE_integer("accuracy_keep_prob", 1.0, "验证时保留概率")
 flags.DEFINE_integer("word2vec_dimension", 200, "词向量维度")
